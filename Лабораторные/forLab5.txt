@@ -1,0 +1,1 @@
+для InitialDirectory лучше  System.IO.Directory.GetParent(@"..\..\..\").FullName; )

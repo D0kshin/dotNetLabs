@@ -1,0 +1,22 @@
+// Put the using statements at the beginning of the code module
+using System.Threading;
+using System.Globalization;
+
+// Put the following code before InitializeComponent()
+// Sets the culture to English (USA)
+Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+// Sets the UI culture to English (USA)
+Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+
+
+
+Альтернативный вариант: использование перегрузки метода TryParse:
+
+    NumberStyles style = NumberStyles.AllowDecimalPoint;
+    CultureInfo culture = CultureInfo.CreateSpecificCulture("ru-RU");
+
+    if (!double.TryParse(inputTextBox.Text, style, culture, out numberDouble))
+    {
+        MessageBox.Show("Please enter a double");
+        return;
+    }
